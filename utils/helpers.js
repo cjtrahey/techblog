@@ -1,10 +1,7 @@
-const withAuth = (req, res, next) => {
-    // If the user isn't logged in, redirect them to the login route
-    if (!req.session.logged_in) {
-         res.redirect('/login');
-    } else {
-         next();
-    }
+module.exports = {
+    // reformats date
+    format_date: (date) => {
+         return `${new Date(date).getMonth() + 1}/${new Date(date).getDate()}/${new Date(date).getFullYear()
+              }`;
+    },
 };
-
-module.exports = withAuth;
